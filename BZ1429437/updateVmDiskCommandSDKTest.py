@@ -110,10 +110,10 @@ class update_disk(unittest.TestCase):
                     ),
                 ),
             )
+            self._wait_for_ok(disk_attachment)
         except Exception as e:
             log.error(e)
 
-        self._wait_for_ok(disk_attachment)
         self.validateQCOW(old_info=info)
 
     def validateQCOW(self, old_info):
@@ -204,9 +204,9 @@ class update_disk(unittest.TestCase):
                     ),
                 ),
             )
+            self._wait_for_ok(disk_attachment)
         except Exception as e:
             log.error(e)
-        self._wait_for_ok(disk_attachment)
         self.validateExtendSizeAndCompat(old_info=info)
 
         
